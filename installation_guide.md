@@ -27,3 +27,16 @@ Suppose you have already installed the sinter package.
   
 ## Step 2
 
+We used a customized version of PyMatching to evaluate soft outputs using the sparse-blossom decoding process. This step is needed to 
+install the customized PyMatching. 
+
+1. Suppose you already created a new virtual python environment.
+2. Git clone the customized version:
+   ```
+   git clone --recursive https://github.com/Zihan-Chen-PhMA/PyMatching
+   ```
+3. Go to the cloned PyMatching folder, then:
+   ```
+   pip install -e .
+   ```
+   The installation is going to take some time. 
