@@ -79,7 +79,12 @@ class Circ_parsor():
         for instruction in self.circ:
             if instruction.name not in RM_ops:
                 continue
-            current_stage_bd.remove(instruction.name)
+            try:
+                current_stage_bd.remove(instruction.name)
+                print(f"stage {current_stage.stage_name} removed {instruction.name}")
+            except ValueError:
+                print(f"stage {current_stage.stage_name} did not expect {instruction.name}")
+                raise
             gate_targets = instruction.targets_copy()
             if instruction.name in ['R','RX']:
                 for gate_target in gate_targets:
