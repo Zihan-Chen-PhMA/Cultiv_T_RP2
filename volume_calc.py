@@ -81,7 +81,7 @@ class Circ_parsor():
                 continue
             try:
                 current_stage_bd.remove(instruction.name)
-                print(f"stage {current_stage.stage_name} removed {instruction.name}")
+                #print(f"stage {current_stage.stage_name} removed {instruction.name}")
             except ValueError:
                 print(f"stage {current_stage.stage_name} did not expect {instruction.name}")
                 raise
