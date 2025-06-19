@@ -11,7 +11,7 @@ Suppose you have already installed the sinter package.
      ```
      import csv
      ```
-   3. Now append the following code immediately after the ```import csv```:
+   3. Now append the following code immediately after the ```import csv```: (This trick is from this [StackExchange Post](https://stackoverflow.com/questions/15063936/csv-error-field-larger-than-field-limit-131072))
       ```
       import sys
       maxInt = sys.maxsize
@@ -24,6 +24,8 @@ Suppose you have already installed the sinter package.
           except OverflowError:
               maxInt = int(maxInt/10)
       ```
+
+  
   
 ## Step 2
 
