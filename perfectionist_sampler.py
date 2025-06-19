@@ -43,18 +43,18 @@ class CompiledPerfectionistSampler(sinter.CompiledSampler):
             bit_packed=False,
             separate_observables=True,
         )
-        num_shots = dets.shape[0]
+        num_shots = int(dets.shape[0])
         num_discards = 0
         counter = collections.Counter()
         for stage in self.stages:
             keep_mask = ~np.any(dets & self.stage2mask[stage], axis=1)
-            counter[f'D{stage}'] = np.count_nonzero(keep_mask==0)
+            counter[f'D{stage}'] = int(np.count_nonzero(keep_mask==0))
             num_discards += counter[f'D{stage}']
             dets = dets[keep_mask]
             obs = obs[keep_mask]
 
         errors = np.any(obs, axis=1)
-        num_errors = np.count_nonzero(errors)
+        num_errors = int(np.count_nonzero(errors))
         t1 = time.monotonic()
 
         return sinter.AnonTaskStats(
