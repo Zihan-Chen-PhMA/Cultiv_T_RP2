@@ -1834,8 +1834,6 @@ class Meta_Circuit():
         self.circ.two_qubit_gate('CNOT',four_packs[0],four_packs[1],
                                  noise=tq_noise)
         self.used_qubits = four_packs[0] + four_packs[1]
-        self._idle_depo(cleaness)
-        self.circ.tick()
 
         # reset sc code qubits
         self._idle_depo(cleaness)
