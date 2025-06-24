@@ -2549,7 +2549,7 @@ class Meta_Circuit():
         # layer 1: Bell pair 
         self.circ.reset_X(six_pack_col_list[4],
                             noise=Z_error)
-        self.circ.reset(six_pack_col_list[5])
+        self.circ.reset(six_pack_col_list[5], noise=X_error)
         self.circ.single_qubit_gate('X',six_pack_col_list[5],
                                     noise=X_error)
         self.used_qubits = six_pack_col_list[4] + six_pack_col_list[5]
